@@ -2,8 +2,9 @@ import styled from "styled-components";
 // import data from "../../config.json";
 
 const StyledHeader = styled.div`
+background-color: ${({ theme }) => theme.backgroundLevel1};
   .user-info {
-    background-color: #F9F9F9;
+    /* background-color: #F9F9F9; */
     display: flex;
     height: 112px;
     align-items: center;

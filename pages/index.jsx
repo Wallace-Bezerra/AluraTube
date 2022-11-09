@@ -1,6 +1,4 @@
 import data from "../config.json";
-import styled from "styled-components";
-import { CSSReset } from "../src/components/CSSReset";
 import Menu from "../src/components/Menu";
 import Header from "../src/components/Header";
 import Timeline from "../src/components/Timeline";
@@ -15,7 +13,7 @@ export default function HomePage() {
   const [valorFiltro, setFiltro] = useState("");
   return (
     <>
-      <CSSReset />
+
       <Menu
         valorFiltro={valorFiltro}
         setFiltro={setFiltro}
