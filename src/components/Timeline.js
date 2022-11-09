@@ -1,8 +1,9 @@
 // import data from "../config.json";
 
+import { sendError } from "next/dist/server/api-utils";
 import styled from "styled-components";
 
- const StyledTimeline = styled.div`
+const StyledTimeline = styled.div`
   flex: 1;
   width: 100%;
   padding: 16px;
@@ -25,7 +26,7 @@ import styled from "styled-components";
     padding: 0;
     overflow: hidden;
     padding: 16px;
-    div {
+    .videos {
       
       width: calc(100vw - 16px * 4);
       display: grid;
@@ -46,34 +47,67 @@ import styled from "styled-components";
       }
     }
   }
+
+  .favoritos{
+    display:flex;
+    gap: 40px;
+      .card-favoritos{
+        display:flex;
+        flex-direction: column;
+        gap: 16px;
+        align-items: center;
+        img{
+          border-radius: 50%;
+          width:100px;
+          height:100px;
+        }
+      }
+    }
 `;
 
 
 
-export default function Timeline(props) {
+export default function Timeline({ valorFiltro, favorites, ...props }) {
   const playlistName = Object.keys(props.title);
 
+  console.log(favorites)
   return (
     <StyledTimeline>
-        {playlistName.map((item) => {
-          const videos = props.title[item];
+      {playlistName.map((playlistitem) => {
+        const videos = props.title[playlistitem];
 
-          return (
-            <section>
-              <h2>{item}</h2>
-              <div>
-                {videos.map((video) => {
-                  return (
-                    <a href={video.url}>
-                      <img src={video.thumb} alt="" />
-                      <span>{video.title}</span>
-                    </a>
-                  );
-                })}
+        return (
+          <section key={playlistitem}>
+            <h2>{playlistitem}</h2>
+            <div className="videos">
+              {videos.filter((filtrovideo) => {
+                return filtrovideo.title.toLocaleLowerCase().includes(valorFiltro.toLocaleLowerCase());
+              }).map((video, index) => {
+                return (
+                  <a key={index} href={video.url}>
+                    <img src={video.thumb} alt="" />
+                    <span>{video.title}</span>
+                  </a>
+                );
+              })}
+            </div>
+          </section>
+        );
+      })}
+      <section >
+        <h2>AluraTubes Favoritos</h2>
+        <div className="favoritos">
+          {favorites.map((favorite) => {
+            return (
+              <div className="card-favoritos">
+                <img src={favorite.thumb} />
+                <p>{favorite.nameChanel}</p>
               </div>
-            </section>
-          );
-        })}
+            )
+          })}
+        </div>
+
+      </section>
     </StyledTimeline>
   );
 }

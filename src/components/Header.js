@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import data from "../../config.json";
+// import data from "../../config.json";
 
 const StyledHeader = styled.div`
   .user-info {
@@ -16,17 +16,18 @@ const StyledHeader = styled.div`
     border-radius: 50%;
   }
 
-  img {
-    width: 200px;
-    height: 80px;
-    border-radius: 50%;
-  }
+  .banner{
+    width:100%;
+    object-fit: cover;
+    height: 300px;
+}
 `;
 
-export default function Header() {
+export default function Header({ data }) {
+  console.log(data);
   return (
     <StyledHeader>
-      <img src="" alt="" />
+      <img className="banner" src={data.banner} alt="" />
 
       <section className="user-info">
         <img src={`https://github.com/${data.github}.png`} alt="" />

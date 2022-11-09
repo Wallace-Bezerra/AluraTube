@@ -2,6 +2,7 @@
   "name": "Wallace Bezerra",
   "job": "Front End Developer",
   "github": "Wallace-Bezerra",
+  "banner": "https://images.unsplash.com/photo-1552308995-2baac1ad5490?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
   "playlists": {
     "Games": [
       {
@@ -44,10 +45,7 @@
         "url": "https://www.youtube.com/watch?v=0uAfy5195iM",
         "thumb": "https://i.ytimg.com/vi/0uAfy5195iM/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB9TLQpAQIrrTlaWKd8b6H_GGoxtA"
       }
-      
-      
-      
-  ],
+    ],
     "FrontEnd": [
       {
         "title": "Jogo com JavaScript #01: Criando um Flappy Bird do ZERO!!!",
@@ -85,5 +83,15 @@
         "thumb": "https://img.youtube.com/vi/yS7AcF-xRUg/hqdefault.jpg"
       }
     ]
-  }
+  },
+  "favorites": [
+    {
+      "thumb": "https://github.com/Wallace-Bezerra.png",
+      "nameChanel": "Wallace"
+    },
+    {
+      "thumb": "https://github.com/Wallace-Bezerra.png",
+      "nameChanel": "Wallace 2"
+    }
+  ]
 }
