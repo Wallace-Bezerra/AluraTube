@@ -13,7 +13,6 @@ export default function HomePage() {
   const [valorFiltro, setFiltro] = useState("");
   return (
     <>
-
       <Menu
         valorFiltro={valorFiltro}
         setFiltro={setFiltro}
